@@ -1,6 +1,6 @@
 # Site Pessoal - Marcos Morais
 
-Este repositório contém o código-fonte do meu site pessoal, que aborda meus interesses e pesquisas em Inteligência Artificial, incluindo o desenvolvimento de modelos de aprendizado de máquina multimodal e o processamento de linguagem natural em idiomas de poucos recursos.
+Este repositório contém o código-fonte do meu site pessoal, que aborda meus interesses e pesquisas em Inteligência Artificial, incluindo o desenvolvimento de modelos de aprendizado de máquina multimodal.
 
 ## Sobre
 
