@@ -1,142 +1,349 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Morais - Dados, IA e Back-End</title>
-    <meta name="description" content="Portfólio de Marcos Morais - Estagiário em Dados e Back-End, pesquisador em IA, estudante da UFLA e membro do HIAAC (UNICAMP).">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #0D1A2D;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1, h2 {
-            margin: 0;
-            font-weight: normal;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        h2 {
-            font-size: 1.5em;
-            color: #A0AEC0;
-        }
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 20px auto;
-        }
-        section {
-            background-color: #E2E8F0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 10px;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .links a {
-            text-decoration: none;
-            color: #0D1A2D;
-            font-weight: bold;
-            background-color: #CBD5E0;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .links a:hover {
-            background-color: #A0AEC0;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 0.9em;
-            background-color: #CBD5E0;
-            color: #333;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcos Morais | Dados, IA e Back-End</title>
+<meta name="description" content="Portfólio de Marcos Morais: estudante de Engenharia de Controle e Automação (UFLA), pesquisador em Aprendizado Federado no HIAAC/UNICAMP, com foco em dados, IA e back-end.">
+<meta name="author" content="Marcos Morais">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:title" content="Marcos Morais | Dados, IA e Back-End">
+<meta property="og:description" content="Pesquisa em Aprendizado Federado, análise de dados e back-end.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="imagens/foto_perfil.jpeg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='26' fill='%234f46e5'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>M</text></svg>">
+<style>
+:root{
+  --bg:#eef0f7; --surface:#ffffff; --text:#171c2f; --muted:#5a6478; --border:#e1e4ef;
+  --accent:#4f46e5; --accent-strong:#4338ca; --on-accent:#ffffff; --accent-soft:#eceeff;
+  --shadow:0 1px 2px rgba(20,28,60,.05),0 8px 24px rgba(20,28,60,.06);
+}
+:root[data-theme="dark"]{
+  --bg:#0a0f1c; --surface:#121a2d; --text:#e8ecf6; --muted:#9aa5bf; --border:#22304d;
+  --accent:#818cf8; --accent-strong:#a5b4fc; --on-accent:#0a0f1c; --accent-soft:#1b2447;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a0f1c; --surface:#121a2d; --text:#e8ecf6; --muted:#9aa5bf; --border:#22304d;
+    --accent:#818cf8; --accent-strong:#a5b4fc; --on-accent:#0a0f1c; --accent-soft:#1b2447;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{width:92%;max-width:1120px;margin:0 auto}
+
+/* nav: pílula flutuante */
+nav{position:sticky;top:14px;z-index:20;margin:14px auto 0;width:92%;max-width:1120px}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:999px;padding:8px 10px 8px 20px;box-shadow:var(--shadow)}
+.brand{font-weight:800;color:var(--text);letter-spacing:-.01em}
+.brand i{font-style:normal;color:var(--accent)}
+.menu{display:flex;gap:2px;align-items:center}
+.menu a{color:var(--muted);padding:7px 13px;border-radius:999px;font-size:.9rem;font-weight:500}
+.menu a:hover,.menu a.active{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+#theme{margin-left:6px;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+#theme:hover{background:var(--accent);color:var(--on-accent)}
+
+/* bento */
+main{padding-bottom:20px}
+section{padding-top:56px}
+.label{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.label::after{content:"";flex:1;height:1px;background:var(--border)}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:26px;padding:26px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card h3{margin:0 0 8px;font-size:1.1rem;letter-spacing:-.01em}
+.card p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
+.r2{grid-row:span 2}
+.tint{background:var(--accent-soft);border-color:transparent}
+.solid{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.solid p,.solid span{color:inherit;opacity:.85}
+
+/* hero */
+.hero{padding:44px 38px;display:flex;flex-direction:column;justify-content:center}
+.tag{align-self:flex-start;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+h1{font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.04;letter-spacing:-.035em;margin:0 0 16px}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:1.15rem;color:var(--muted);max-width:52ch;margin:0 0 26px}
+.photo{padding:0;min-height:300px}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;min-height:44px;line-height:1.2;text-align:center;max-width:100%;overflow-wrap:anywhere;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent)}
+.btn:hover{text-decoration:none;background:var(--accent);color:var(--on-accent)}
+
+/* números */
+.stat{display:flex;flex-direction:column;justify-content:flex-end;min-height:150px}
+.stat b{font-size:3rem;line-height:1;letter-spacing:-.04em;margin-bottom:8px}
+.stat span{font-size:.9rem;color:var(--muted)}
+.solid.stat b{color:var(--on-accent)}
+.tint.stat b,.stat:not(.solid) b{color:var(--accent)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:var(--accent-soft);color:var(--accent);padding:4px 12px;border-radius:999px;font-size:.8rem;font-weight:600}
+.tint .chip{background:var(--surface)}
+.solid .chip{background:rgba(255,255,255,.18);color:inherit}
+
+/* pesquisa */
+.paper h3{font-size:1.5rem;line-height:1.3;letter-spacing:-.02em;margin-bottom:10px}
+.paper .meta{font-size:.88rem;color:var(--muted);margin-bottom:14px}
+.paper p{color:var(--text)}
+
+/* projetos */
+.proj{display:flex;flex-direction:column}
+.proj .more{margin:auto 0 0;padding-top:16px;font-weight:600;font-size:.92rem}
+.proj .chips{margin-top:2px}
+.k{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:block}
+
+/* timeline */
+.tl{border-left:2px solid var(--border);padding-left:18px;margin:0 0 4px 4px}
+.tl div{position:relative;margin-bottom:18px}
+.tl div::before{content:"";position:absolute;left:-25px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.tl b{display:block;font-size:.98rem}
+.tl small{color:var(--muted);font-size:.85rem}
+
+.cert b{display:block;font-size:.98rem;line-height:1.3;margin-bottom:4px}
+.cert small{color:var(--muted)}
+.cert{padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;min-height:110px}
+
+.contact{text-align:center;padding:48px 28px}
+.contact h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em;margin:0 0 10px}
+.contact p{max-width:48ch;margin:0 auto 22px;font-size:1.02rem}
+.contact .cta{justify-content:center}
+footer{padding:36px 0 44px;text-align:center;color:var(--muted);font-size:.88rem}
+
+@media (max-width:900px){
+  .s3{grid-column:span 6}.s4{grid-column:span 6}.s5,.s6,.s7,.s8{grid-column:span 12}
+  .r2{grid-row:auto}
+  .photo{min-height:340px}
+  .menu a{padding:7px 9px;font-size:.84rem}
+}
+@media (max-width:640px){
+  .bento{gap:12px}
+  .s3,.s4{grid-column:span 12}
+  .stat{min-height:120px}
+  .card{padding:22px;border-radius:22px}
+  .hero{padding:30px 24px}
+  .brand,.menu a:nth-child(n+5):not(#theme){display:none}
+  .nav-in{padding-left:14px}
+  .menu{width:100%;justify-content:space-between}
+  .cta .btn{flex:1 1 150px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}.card:hover{transform:none}}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* fundo: rede neural abstrata (aparece só onde não há cartões) */
+.net{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;color:var(--accent)}
+.net .base{opacity:.2}
+.net .fx{opacity:.9;filter:drop-shadow(0 0 5px var(--accent))}
+.net .fx *{transform-box:fill-box;transform-origin:center}
+:root[data-theme="dark"] .net .base{opacity:.28}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .net .base{opacity:.28}}
+@media (max-width:640px){.net .base{opacity:.14}.net .fx{opacity:.7}}
+</style>
 </head>
 <body>
+<svg class="net" aria-hidden="true" focusable="false" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><g class="base"><g stroke="currentColor" stroke-width="1.2" opacity=".55"><line x1="37" y1="184" x2="242" y2="487"/><line x1="37" y1="184" x2="238" y2="146"/><line x1="37" y1="184" x2="259" y2="671"/><line x1="65" y1="358" x2="238" y2="146"/><line x1="65" y1="358" x2="239" y2="778"/><line x1="65" y1="358" x2="205" y2="404"/><line x1="40" y1="545" x2="206" y2="245"/><line x1="40" y1="545" x2="242" y2="487"/><line x1="40" y1="545" x2="205" y2="404"/><line x1="21" y1="721" x2="242" y2="487"/><line x1="21" y1="721" x2="259" y2="671"/><line x1="21" y1="721" x2="239" y2="778"/><line x1="238" y1="146" x2="416" y2="521"/><line x1="238" y1="146" x2="417" y2="787"/><line x1="238" y1="146" x2="422" y2="174"/><line x1="206" y1="245" x2="422" y2="174"/><line x1="206" y1="245" x2="417" y2="787"/><line x1="206" y1="245" x2="420" y2="710"/><line x1="205" y1="404" x2="417" y2="787"/><line x1="205" y1="404" x2="416" y2="521"/><line x1="205" y1="404" x2="421" y2="608"/><line x1="242" y1="487" x2="422" y2="174"/><line x1="242" y1="487" x2="401" y2="285"/><line x1="242" y1="487" x2="417" y2="787"/><line x1="259" y1="671" x2="392" y2="398"/><line x1="259" y1="671" x2="421" y2="608"/><line x1="259" y1="671" x2="399" y2="71"/><line x1="239" y1="778" x2="422" y2="174"/><line x1="239" y1="778" x2="401" y2="285"/><line x1="239" y1="778" x2="392" y2="398"/><line x1="399" y1="71" x2="597" y2="424"/><line x1="399" y1="71" x2="630" y2="237"/><line x1="399" y1="71" x2="640" y2="142"/><line x1="422" y1="174" x2="640" y2="142"/><line x1="422" y1="174" x2="630" y2="237"/><line x1="422" y1="174" x2="599" y2="321"/><line x1="401" y1="285" x2="599" y2="321"/><line x1="401" y1="285" x2="626" y2="557"/><line x1="401" y1="285" x2="631" y2="668"/><line x1="392" y1="398" x2="630" y2="237"/><line x1="392" y1="398" x2="640" y2="142"/><line x1="392" y1="398" x2="599" y2="321"/><line x1="416" y1="521" x2="630" y2="237"/><line x1="416" y1="521" x2="597" y2="424"/><line x1="416" y1="521" x2="599" y2="321"/><line x1="421" y1="608" x2="631" y2="668"/><line x1="421" y1="608" x2="637" y2="808"/><line x1="421" y1="608" x2="626" y2="557"/><line x1="420" y1="710" x2="626" y2="557"/><line x1="420" y1="710" x2="630" y2="237"/><line x1="420" y1="710" x2="637" y2="808"/><line x1="417" y1="787" x2="640" y2="142"/><line x1="417" y1="787" x2="637" y2="808"/><line x1="417" y1="787" x2="597" y2="424"/><line x1="640" y1="142" x2="775" y2="530"/><line x1="640" y1="142" x2="817" y2="436"/><line x1="640" y1="142" x2="770" y2="73"/><line x1="630" y1="237" x2="770" y2="73"/><line x1="630" y1="237" x2="825" y2="178"/><line x1="630" y1="237" x2="774" y2="368"/><line x1="599" y1="321" x2="825" y2="178"/><line x1="599" y1="321" x2="817" y2="436"/><line x1="599" y1="321" x2="829" y2="264"/><line x1="597" y1="424" x2="829" y2="264"/><line x1="597" y1="424" x2="825" y2="178"/><line x1="597" y1="424" x2="770" y2="73"/><line x1="626" y1="557" x2="777" y2="705"/><line x1="626" y1="557" x2="775" y2="530"/><line x1="626" y1="557" x2="776" y2="784"/><line x1="631" y1="668" x2="770" y2="73"/><line x1="631" y1="668" x2="829" y2="264"/><line x1="631" y1="668" x2="828" y2="645"/><line x1="637" y1="808" x2="775" y2="530"/><line x1="637" y1="808" x2="776" y2="784"/><line x1="637" y1="808" x2="770" y2="73"/><line x1="770" y1="73" x2="973" y2="661"/><line x1="770" y1="73" x2="968" y2="459"/><line x1="770" y1="73" x2="1008" y2="93"/><line x1="825" y1="178" x2="1018" y2="806"/><line x1="825" y1="178" x2="968" y2="459"/><line x1="825" y1="178" x2="1008" y2="93"/><line x1="829" y1="264" x2="1018" y2="806"/><line x1="829" y1="264" x2="968" y2="459"/><line x1="829" y1="264" x2="967" y2="558"/><line x1="774" y1="368" x2="1008" y2="93"/><line x1="774" y1="368" x2="967" y2="558"/><line x1="774" y1="368" x2="968" y2="459"/><line x1="817" y1="436" x2="968" y2="459"/><line x1="817" y1="436" x2="967" y2="558"/><line x1="817" y1="436" x2="1008" y2="93"/><line x1="775" y1="530" x2="967" y2="558"/><line x1="775" y1="530" x2="1008" y2="93"/><line x1="775" y1="530" x2="973" y2="661"/><line x1="828" y1="645" x2="1008" y2="93"/><line x1="828" y1="645" x2="973" y2="661"/><line x1="828" y1="645" x2="1018" y2="806"/><line x1="777" y1="705" x2="971" y2="351"/><line x1="777" y1="705" x2="968" y2="459"/><line x1="777" y1="705" x2="1018" y2="806"/><line x1="776" y1="784" x2="968" y2="459"/><line x1="776" y1="784" x2="973" y2="661"/><line x1="776" y1="784" x2="967" y2="558"/><line x1="1008" y1="93" x2="1155" y2="805"/><line x1="1008" y1="93" x2="1156" y2="429"/><line x1="1008" y1="93" x2="1168" y2="674"/><line x1="994" y1="222" x2="1163" y2="194"/><line x1="994" y1="222" x2="1163" y2="485"/><line x1="994" y1="222" x2="1168" y2="674"/><line x1="971" y1="351" x2="1168" y2="123"/><line x1="971" y1="351" x2="1201" y2="309"/><line x1="971" y1="351" x2="1163" y2="485"/><line x1="968" y1="459" x2="1163" y2="194"/><line x1="968" y1="459" x2="1156" y2="429"/><line x1="968" y1="459" x2="1168" y2="123"/><line x1="967" y1="558" x2="1156" y2="429"/><line x1="967" y1="558" x2="1196" y2="590"/><line x1="967" y1="558" x2="1168" y2="123"/><line x1="973" y1="661" x2="1155" y2="805"/><line x1="973" y1="661" x2="1168" y2="674"/><line x1="973" y1="661" x2="1163" y2="485"/><line x1="1018" y1="806" x2="1155" y2="805"/><line x1="1018" y1="806" x2="1201" y2="309"/><line x1="1018" y1="806" x2="1168" y2="123"/><line x1="1168" y1="123" x2="1398" y2="385"/><line x1="1168" y1="123" x2="1395" y2="790"/><line x1="1168" y1="123" x2="1362" y2="254"/><line x1="1163" y1="194" x2="1395" y2="790"/><line x1="1163" y1="194" x2="1351" y2="622"/><line x1="1163" y1="194" x2="1362" y2="254"/><line x1="1201" y1="309" x2="1351" y2="622"/><line x1="1201" y1="309" x2="1362" y2="254"/><line x1="1201" y1="309" x2="1398" y2="385"/><line x1="1156" y1="429" x2="1395" y2="790"/><line x1="1156" y1="429" x2="1374" y2="536"/><line x1="1156" y1="429" x2="1351" y2="622"/><line x1="1163" y1="485" x2="1362" y2="254"/><line x1="1163" y1="485" x2="1398" y2="385"/><line x1="1163" y1="485" x2="1374" y2="536"/><line x1="1196" y1="590" x2="1395" y2="790"/><line x1="1196" y1="590" x2="1398" y2="385"/><line x1="1196" y1="590" x2="1362" y2="254"/><line x1="1168" y1="674" x2="1395" y2="790"/><line x1="1168" y1="674" x2="1374" y2="536"/><line x1="1168" y1="674" x2="1362" y2="254"/><line x1="1155" y1="805" x2="1362" y2="254"/><line x1="1155" y1="805" x2="1374" y2="536"/><line x1="1155" y1="805" x2="1395" y2="790"/><line x1="1355" y1="135" x2="1542" y2="567"/><line x1="1355" y1="135" x2="1545" y2="161"/><line x1="1355" y1="135" x2="1583" y2="726"/><line x1="1362" y1="254" x2="1574" y2="386"/><line x1="1362" y1="254" x2="1583" y2="726"/><line x1="1362" y1="254" x2="1542" y2="567"/><line x1="1398" y1="385" x2="1545" y2="161"/><line x1="1398" y1="385" x2="1542" y2="567"/><line x1="1398" y1="385" x2="1583" y2="726"/><line x1="1374" y1="536" x2="1542" y2="567"/><line x1="1374" y1="536" x2="1545" y2="161"/><line x1="1374" y1="536" x2="1583" y2="726"/><line x1="1351" y1="622" x2="1583" y2="726"/><line x1="1351" y1="622" x2="1574" y2="386"/><line x1="1351" y1="622" x2="1542" y2="567"/><line x1="1395" y1="790" x2="1574" y2="386"/><line x1="1395" y1="790" x2="1583" y2="726"/><line x1="1395" y1="790" x2="1542" y2="567"/></g><g fill="currentColor"><circle cx="37" cy="184" r="8"/><circle cx="65" cy="358" r="6"/><circle cx="40" cy="545" r="8"/><circle cx="21" cy="721" r="6"/><circle cx="238" cy="146" r="4"/><circle cx="206" cy="245" r="4"/><circle cx="205" cy="404" r="6"/><circle cx="242" cy="487" r="4"/><circle cx="259" cy="671" r="6"/><circle cx="239" cy="778" r="6"/><circle cx="399" cy="71" r="6"/><circle cx="422" cy="174" r="4"/><circle cx="401" cy="285" r="5"/><circle cx="392" cy="398" r="8"/><circle cx="416" cy="521" r="8"/><circle cx="421" cy="608" r="5"/><circle cx="420" cy="710" r="4"/><circle cx="417" cy="787" r="6"/><circle cx="640" cy="142" r="5"/><circle cx="630" cy="237" r="5"/><circle cx="599" cy="321" r="4"/><circle cx="597" cy="424" r="4"/><circle cx="626" cy="557" r="8"/><circle cx="631" cy="668" r="4"/><circle cx="637" cy="808" r="6"/><circle cx="770" cy="73" r="4"/><circle cx="825" cy="178" r="5"/><circle cx="829" cy="264" r="5"/><circle cx="774" cy="368" r="8"/><circle cx="817" cy="436" r="6"/><circle cx="775" cy="530" r="5"/><circle cx="828" cy="645" r="4"/><circle cx="777" cy="705" r="8"/><circle cx="776" cy="784" r="4"/><circle cx="1008" cy="93" r="5"/><circle cx="994" cy="222" r="5"/><circle cx="971" cy="351" r="6"/><circle cx="968" cy="459" r="6"/><circle cx="967" cy="558" r="5"/><circle cx="973" cy="661" r="8"/><circle cx="1018" cy="806" r="5"/><circle cx="1168" cy="123" r="4"/><circle cx="1163" cy="194" r="8"/><circle cx="1201" cy="309" r="8"/><circle cx="1156" cy="429" r="5"/><circle cx="1163" cy="485" r="8"/><circle cx="1196" cy="590" r="8"/><circle cx="1168" cy="674" r="5"/><circle cx="1155" cy="805" r="4"/><circle cx="1355" cy="135" r="8"/><circle cx="1362" cy="254" r="6"/><circle cx="1398" cy="385" r="8"/><circle cx="1374" cy="536" r="6"/><circle cx="1351" cy="622" r="5"/><circle cx="1395" cy="790" r="4"/><circle cx="1545" cy="161" r="4"/><circle cx="1574" cy="386" r="5"/><circle cx="1542" cy="567" r="5"/><circle cx="1583" cy="726" r="8"/></g></g><g class="fx"></g></svg>
 
-<header>
-    <img src="imagens/foto_perfil.jpeg" alt="Foto de Marcos Morais" class="profile-img">
-    <h1>Marcos Morais</h1>
-    <h2>Estagiário em Dados | Back-End | IA</h2>
-</header>
+<nav aria-label="Navegação principal">
+  <div class="nav-in">
+    <a class="brand" href="#inicio">Marcos<i>.</i>Morais</a>
+    <div class="menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#pesquisa">Pesquisa</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#skills">Skills</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+      <button id="theme" type="button" aria-label="Alternar tema claro/escuro">🌓</button>
+    </div>
+  </div>
+</nav>
 
-<div class="container">
+<main class="wrap">
 
-    <section class="about">
-        <h2>Sobre Mim</h2>
-        <p>Sou estudante de Engenharia de Controle e Automação na UFLA e pesquisador de Iniciação Científica na UNICAMP, atuando no 
-        <a href="https://hiaac.unicamp.br/students/marcos-gilliard-oliveira-morais/" target="_blank">Laboratório de Inteligência Artificial e Arquiteturas Cognitivas (HIAAC)</a>.
-        Tenho interesse em análise de dados, back-end e desenvolvimento de modelos de aprendizado de máquina multimodal. 
-        <br>Busco oportunidades como <strong>estagiário</strong> em Dados e Desenvolvimento Back-End para aplicar minhas habilidades técnicas e crescer em projetos reais.</p>
-    </section>
-
-    <section class="projects">
-        <h2>Projetos e Publicações</h2>
-        <p><strong>Mecanismo para Mitigar Ataques de Envenenamento de Modelo no Aprendizado Federado</strong> - Artigo publicado no <a href="https://sol.sbc.org.br/index.php/courb/article/view/30002" target="_blank">CoUrb/SBC</a> demonstrando mitigação de ataques em IA Federada com 98% de precisão final.</p>
-        <p>Repositórios de projetos em Python, SQL, Machine Learning e Back-End disponíveis no meu <a href="https://github.com/Morais727" target="_blank">GitHub</a>.</p>
-    </section>
-
-    <section class="skills">
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-            <li><strong>Linguagens:</strong> Python, C#, C++, SQL, R, PHP</li>
-            <li><strong>Banco de Dados:</strong> MySQL, PostgreSQL</li>
-            <li><strong>Ferramentas:</strong> Power BI, Git/GitHub, Azure DevOps, Jupyter Notebook</li>
-            <li><strong>Áreas:</strong> Análise de Dados, ETL, Machine Learning, Back-End</li>
-        </ul>
-    </section>
-
-    <section class="certifications">
-    <h2>Certificações</h2>
-    <ul>
-        <li>Análise de Dados com Python – <strong>TIC em Trilhas</strong></li>
-        <li>Fundamentos de Power BI – <strong>IFMG</strong></li>
-        <li>Deep Learning: Keras e Python – <strong>Samsung Ocean</strong></li>
-        <li>Visualização de Dados com R – <strong>Samsung Ocean</strong></li>
-        <li>Introdução a Banco de Dados – <strong>DIO</strong></li>
-        <li>AWS re/Start Graduate – <strong>Amazon Web Services</strong></li>
-    </ul>
+<section id="inicio" style="padding-top:28px">
+  <div class="bento">
+    <header class="card hero s8 r2">
+      <span class="tag">Pesquisa · Dados · Back-End</span>
+      <h1>Olá, eu sou <em>Marcos Morais</em>.</h1>
+      <p class="lead">Estudante de Engenharia de Controle e Automação e pesquisador em Inteligência Artificial. Transformo dados em decisões e construo sistemas back-end confiáveis.</p>
+      <div class="cta">
+        <a class="btn" href="#contato">Vamos conversar</a>
+        <a class="btn" href="https://github.com/Morais727" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/marcos-morais-abba2a184/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </header>
+    <div class="card photo s4 r2"><img src="imagens/foto_perfil.jpeg" alt="Foto de Marcos Morais" width="400" height="400"></div>
+  </div>
 </section>
 
-
-    <div class="links">
-        <a href="https://github.com/Morais727" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/marcos-morais-abba2a184/" target="_blank">LinkedIn</a>
+<section id="sobre" class="reveal">
+  <div class="label">Sobre mim</div>
+  <div class="bento">
+    <div class="card s6 r2">
+      <h3>Pesquisa e código, lado a lado</h3>
+      <p style="color:var(--text)">Curso Engenharia de Controle e Automação na <strong>UFLA</strong> e sou pesquisador de Iniciação Científica na <strong>UNICAMP</strong>, no <a href="https://hiaac.unicamp.br/students/marcos-gilliard-oliveira-morais/" target="_blank" rel="noopener">H.IAAC (Hub de Inteligência Artificial e Arquiteturas Cognitivas)</a>, com foco em <strong>aprendizado distribuído</strong>.</p>
+      <p style="color:var(--text);margin:0">Meu interesse está em análise de dados, back-end e aprendizado de máquina multimodal. Gosto de aplicar pesquisa em <strong>projetos reais</strong>, do tratamento dos dados ao sistema em produção.</p>
     </div>
+    <div class="card stat s3"><b>1</b><span>artigo publicado (CoUrb/SBC 2024)</span></div>
+    <div class="card stat s3"><b>2</b><span>instituições: UFLA e UNICAMP</span></div>
+    <div class="card stat s3"><b>30+</b><span>repositórios no GitHub</span></div>
+    <div class="card stat s3"><b>6</b><span>certificações</span></div>
+  </div>
+</section>
 
-</div>
+<section id="pesquisa" class="reveal">
+  <div class="label">Pesquisa e publicação</div>
+  <div class="bento">
+    <article class="card paper s8">
+      <span class="k">VIII CoUrb/SBC · Niterói/RJ · 2024</span>
+      <h3>Mecanismo para Mitigar Ataques de Envenenamento de Modelo no Aprendizado Federado</h3>
+      <div class="meta">M. G. O. Morais, J. B. D. da Costa, L. F. G. Gonzalez, A. M. de Souza, L. A. Villas</div>
+      <p>Propomos o <strong>RAGNAR</strong>, um mecanismo de defesa contra ataques de envenenamento de modelo em Aprendizado Federado. Ele usa métricas do próprio treinamento para detectar ataques em tempo real e adapta a agregação dos parâmetros. Nos experimentos, reduziu em <strong>31%</strong> a perda de acurácia dos clientes e manteve cerca de <strong>98%</strong> de acurácia final.</p>
+      <div class="cta">
+        <a class="btn" href="https://sol.sbc.org.br/index.php/courb/article/view/30002" target="_blank" rel="noopener">Ler artigo</a>
+        <a class="btn" href="https://doi.org/10.5753/courb.2024.3398" target="_blank" rel="noopener">DOI</a>
+        <a class="btn" href="https://github.com/Morais727/CoUrb-2024" target="_blank" rel="noopener">Código</a>
+      </div>
+    </article>
+    <div class="card tint s4" style="display:flex;flex-direction:column;justify-content:space-between">
+      <div><span class="k">Temas</span><div class="chips"><span class="chip">Aprendizado Federado</span><span class="chip">Segurança em IA</span><span class="chip">Envenenamento de modelo</span><span class="chip">Python</span><span class="chip">Machine Learning</span></div></div>
+      <p style="margin:18px 0 0;color:var(--text)">Linha de pesquisa: aprendizado distribuído no H.IAAC.</p>
+    </div>
+  </div>
+</section>
 
-<footer>
-    <p>© 2025 Marcos Morais. Todos os direitos reservados.</p>
-</footer>
+<section id="projetos" class="reveal">
+  <div class="label">Projetos</div>
+  <div class="bento">
+    <article class="card proj tint s6"><span class="k">Destaque</span><h3>CoUrb-2024</h3><p>Experimentos e código do artigo sobre mitigação de envenenamento em Aprendizado Federado.</p><div class="chips"><span class="chip">Jupyter</span><span class="chip">Federated Learning</span></div><p class="more"><a href="https://github.com/Morais727/CoUrb-2024" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s3"><h3>DASH_HIAAC</h3><p>Dashboard em Python desenvolvido no contexto do laboratório H.IAAC.</p><div class="chips"><span class="chip">Python</span><span class="chip">Dashboard</span></div><p class="more"><a href="https://github.com/Morais727/DASH_HIAAC" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s3"><h3>local_attacks_fedml</h3><p>Adaptação do FedML para experimentos com ataques locais em Aprendizado Federado.</p><div class="chips"><span class="chip">Python</span><span class="chip">FedML</span></div><p class="more"><a href="https://github.com/Morais727/local_attacks_fedml" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s4"><h3>Blades_modified</h3><p>Versão modificada do Blades, benchmark de robustez em Aprendizado Federado.</p><div class="chips"><span class="chip">Python</span><span class="chip">Robustez</span></div><p class="more"><a href="https://github.com/Morais727/Blades_modified" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s4"><h3>Web scraping meteorológico</h3><p>Coleta automatizada de dados meteorológicos na web.</p><div class="chips"><span class="chip">Python</span><span class="chip">ETL</span></div><p class="more"><a href="https://github.com/Morais727/web_scraping_dados_metereologicos" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s4"><h3>Bot Telegram</h3><p>Bot para Telegram desenvolvido em notebook Jupyter.</p><div class="chips"><span class="chip">Python</span><span class="chip">Automação</span></div><p class="more"><a href="https://github.com/Morais727/Bot_telegram" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s4"><h3>Web Hooks PHP</h3><p>Integração por webhooks no back-end com PHP.</p><div class="chips"><span class="chip">PHP</span><span class="chip">Back-End</span></div><p class="more"><a href="https://github.com/Morais727/Web_Hooks_PHP" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s4"><h3>Lâmpada inteligente</h3><p>Código em C para um ESP-01 gerenciar o acionamento remoto de uma luminária.</p><div class="chips"><span class="chip">C</span><span class="chip">IoT · ESP-01</span></div><p class="more"><a href="https://github.com/Morais727/lampada_inteligente" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <article class="card proj s4"><h3>Calculadora C#</h3><p>Trabalho de conclusão do curso Tecnologias Microsoft da Extecamp (Unicamp), 2023.</p><div class="chips"><span class="chip">C#</span><span class="chip">.NET</span></div><p class="more"><a href="https://github.com/Morais727/Calculadora" target="_blank" rel="noopener">Ver repositório →</a></p></article>
+    <div class="card solid s12" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 26px">
+      <b style="font-size:1.05rem">Mais de 30 repositórios no GitHub</b>
+      <a class="btn" style="background:var(--surface);border-color:var(--surface)" href="https://github.com/Morais727?tab=repositories" target="_blank" rel="noopener">Ver todos os repositórios</a>
+    </div>
+  </div>
+</section>
 
+<section id="skills" class="reveal">
+  <div class="label">Habilidades técnicas</div>
+  <div class="bento">
+    <div class="card s4"><span class="k">Linguagens</span><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C#</span><span class="chip">C++</span><span class="chip">R</span><span class="chip">PHP</span></div></div>
+    <div class="card s4"><span class="k">Bancos de dados</span><div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span></div></div>
+    <div class="card s4"><span class="k">Ferramentas</span><div class="chips"><span class="chip">Power BI</span><span class="chip">Git/GitHub</span><span class="chip">Azure DevOps</span><span class="chip">Jupyter</span><span class="chip">AWS</span></div></div>
+    <div class="card tint s12"><span class="k">Dados e IA</span><div class="chips"><span class="chip">Análise de Dados</span><span class="chip">ETL</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Keras</span><span class="chip">Aprendizado Federado</span></div></div>
+  </div>
+</section>
+
+<section id="formacao" class="reveal">
+  <div class="label">Formação e certificações</div>
+  <div class="bento">
+    <div class="card s12">
+      <div class="tl">
+        <div><b>Engenharia de Controle e Automação</b><small>UFLA · Universidade Federal de Lavras</small></div>
+        <div><b>Iniciação Científica · Aprendizado Distribuído</b><small>H.IAAC · UNICAMP</small></div>
+        <div><b>Tecnologias Microsoft</b><small>Extecamp, Escola de Extensão da Unicamp · 2023</small></div>
+      </div>
+    </div>
+    <div class="card cert s4"><b>AWS re/Start Graduate</b><small>Amazon Web Services</small></div>
+    <div class="card cert s4"><b>Deep Learning: Keras e Python</b><small>Samsung Ocean</small></div>
+    <div class="card cert s4"><b>Visualização de Dados com R</b><small>Samsung Ocean</small></div>
+    <div class="card cert s4"><b>Análise de Dados com Python</b><small>TIC em Trilhas</small></div>
+    <div class="card cert s4"><b>Fundamentos de Power BI</b><small>IFMG</small></div>
+    <div class="card cert s4"><b>Introdução a Banco de Dados</b><small>DIO</small></div>
+  </div>
+</section>
+
+<section id="contato" class="reveal">
+  <div class="bento">
+    <div class="card contact s12">
+      <h2>Vamos conversar?</h2>
+      <p>Para colaborações, projetos ou troca de ideias, fale comigo pelo LinkedIn ou por e-mail.</p>
+      <div class="cta">
+        <a class="btn" href="https://www.linkedin.com/in/marcos-morais-abba2a184/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:moraismarcos727@gmail.com">moraismarcos727@gmail.com</a>
+        <a class="btn" href="https://github.com/Morais727" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="ano">2025</span> Marcos Morais</div></footer>
+
+<script>
+document.getElementById('ano').textContent = new Date().getFullYear();
+const root = document.documentElement, btn = document.getElementById('theme');
+try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+btn.addEventListener('click', () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+});
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .05 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const links = [...document.querySelectorAll('.menu a[href^="#"]')];
+const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id]').forEach(el => so.observe(el));
+
+/* ativação de neurônios: pulsos de luz entre as camadas */
+(function(){
+  const svg=document.querySelector('.net'); if(!svg||matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const NS='http://www.w3.org/2000/svg', fx=svg.querySelector('.fx'), key=(x,y)=>x+','+y;
+  const fwd={}, back={};
+  svg.querySelectorAll('.base line').forEach(l=>{
+    const a=[+l.getAttribute('x1'),+l.getAttribute('y1')], b=[+l.getAttribute('x2'),+l.getAttribute('y2')];
+    (fwd[key(...a)]=fwd[key(...a)]||[]).push({a,b});
+    (back[key(...b)]=back[key(...b)]||[]).push({a:b,b:a});
+  });
+  const rnd=(a,b)=>a+Math.random()*(b-a);
+  let active=0;
+  const el=(t,at)=>{const e=document.createElementNS(NS,t);for(const k in at)e.setAttribute(k,at[k]);fx.appendChild(e);return e;};
+  const done=(e,a,cb)=>{a.onfinish=()=>{e.remove();cb&&cb();};};
+  function flash(p){
+    const c=el('circle',{cx:p[0],cy:p[1],r:7,fill:'currentColor'});
+    done(c,c.animate([{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(3.6)'}],{duration:1600,easing:'ease-out'}));
+  }
+  function fire(k,graph,depth){
+    const edges=graph[k]; if(!edges||depth>10){active--;return;}
+    const n=Math.min(edges.length,1+Math.floor(Math.random()*3));
+    const pick=edges.slice().sort(()=>Math.random()-.5).slice(0,n);
+    active+=pick.length-1;
+    pick.forEach(({a,b})=>{
+      const ln=el('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:'currentColor','stroke-width':2});
+      done(ln,ln.animate([{opacity:.85},{opacity:0}],{duration:2600,easing:'ease-out'}));
+      const d=el('circle',{cx:0,cy:0,r:4.5,fill:'currentColor'});
+      done(d,d.animate([{transform:`translate(${a[0]}px,${a[1]}px)`},{transform:`translate(${b[0]}px,${b[1]}px)`}],{duration:rnd(1500,2600),easing:'ease-in-out',fill:'forwards'}),()=>{
+        flash(b);
+        setTimeout(()=>fire(key(...b),graph,depth+1),rnd(350,800)); /* pausa ao ativar o neurônio */
+      });
+    });
+  }
+  function wave(){
+    if(!document.hidden&&active<5){
+      const graph=Math.random()<.7?fwd:back, ks=Object.keys(graph), k=ks[Math.floor(Math.random()*ks.length)];
+      const [x,y]=k.split(',').map(Number); active++; flash([x,y]); setTimeout(()=>fire(k,graph,0),rnd(350,800));
+    }
+    setTimeout(wave,rnd(1800,4200));
+  }
+  wave();
+})();
+</script>
 </body>
 </html>
